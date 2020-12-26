@@ -10,7 +10,7 @@ const objectId = mongodb.ObjectID;
 
 const app = express();
 const dbURL = "mongodb+srv://harsha:8tt65gWx8bWptluV@password-recovery.a6ytp.mongodb.net/<dbname>?retryWrites=true&w=majority";
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
 
