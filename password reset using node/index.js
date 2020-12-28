@@ -120,13 +120,13 @@ app.post('/forgot-password',async(req,res)=>{
                 port: 587,
                 secure: false,
                 auth: {
-                  user: 'hkurumindla@gmail.com', // generated ethereal user
-                  pass: 'Ajay@2554', // generated ethereal password
+                 user: process.env.SENDER, // generated ethereal user
+                  pass: process.env.PASS, // generated ethereal password
                 },
             });
                 let info = await transporter.sendMail({
-                    from: 'hkurumindla@gmail.com', 
-                    to:  'harsha.ajay@hotmail.com', 
+                    from: process.env.SENDER, 
+                    to:  req.body.email, 
                     subject: "Reset Password ", 
                     text: "Reset password", 
                     html: `<p>Here is the link to reset your password</p><br><a href="http://localhost:3000/auth/${req.body.email}/${string}">Click here</a>`, 
