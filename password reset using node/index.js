@@ -129,7 +129,7 @@ app.post('/forgot-password',async(req,res)=>{
                     to:  req.body.email, 
                     subject: "Reset Password ", 
                     text: "Reset password", 
-                    html: `<p>Here is the link to reset your password</p><br><a href="http://localhost:3000/auth/${req.body.email}/${string}">Click here</a>`, 
+                    html: `<p>Here is the link to reset your password</p><br><a href="https://passwordr.herokuapp.com/auth/${req.body.email}/${string}">Click here</a>`, 
                   });
             res.status(200).json({message:"user exists"})
             clientInfo.close()
